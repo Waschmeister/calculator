@@ -9,17 +9,17 @@ fun main() {
 class Inputs (val z1: Double, val z2: Double, val op: String)
 fun readInputs(): Inputs {
 
-    println("Enter the first Number.")
-    val z1String = readln()
+    println("Enter the equation.")
+    val (z1String, op, z2String) = readln().split(' ')
+   // val z1String = readln()
     val z1 = z1String.toDouble()
-    println("Enter the second Number.")
-    val z2String = readln()
+  //  val z2String = readln()
     val z2 = z2String.toDouble()
+
 
 //had to got with .toDouble, because z1-,z2String has not accepting int or long
 
-    println("Enter an operator (+,-,*,/,<,>).")
-    val op = readln()
+   // val op = readln()
     return Inputs(z1, z2, op)
 
 }
