@@ -1,10 +1,14 @@
+import java.io.InputStream
+
 fun main() {
+
 
     calculator()
 
 }
+class Inputs (val z1: Double, val z2: Double, val op: String)
+fun readInputs(): Inputs {
 
-    fun calculator() {
     println("Enter the first Number.")
     val z1String = readln()
     val z1 = z1String.toDouble()
@@ -16,26 +20,35 @@ fun main() {
 
     println("Enter an operator (+,-,*,/,<,>).")
     val op = readln()
+    return Inputs(z1, z2, op)
+
+}
+
+fun calculator() {
+    val inputs: Inputs = readInputs()
     val result: Any
 
-    when (op) {
 
-        "+" -> result = z1 + z2
-        "-" -> result = z1 - z2
-        "*" -> result = z1 * z2
-        "/" -> result = z1 / z2
-        "<" -> result = z1 < z2
-        ">" -> result = z1 > z2
+    when (inputs.op) {
+
+        "+" -> result = inputs.z1 + inputs.z2
+        "-" -> result = inputs.z1 - inputs.z2
+        "*" -> result = inputs.z1 * inputs.z2
+        "/" -> result = inputs.z1 / inputs.z2
+        "<" -> result = inputs.z1 < inputs.z2
+        ">" -> result = inputs.z1 > inputs.z2
 
         else -> {
             println("Error! operator is not correct")
             return
         }
     }
+    val endresult = result.toString()
 
-    println("$z1 $op $z2 = $result")
+        println("${inputs.z1} ${inputs.op} ${inputs.z2} = $endresult")
 
-    // was much easier than with java scanner
+
+    // was much easier than  java scanner
 }
 
 
