@@ -14,9 +14,9 @@ fun main() {
 
 //had to got with .toDouble, because z1-,z2String has not accepting int or long
 
-    println("Enter an operator (+,-,*,/).")
+    println("Enter an operator (+,-,*,/,<,>).")
     val op = readln()
-    val result: Double
+    val result: Any
 
     when (op) {
 
@@ -24,6 +24,8 @@ fun main() {
         "-" -> result = z1 - z2
         "*" -> result = z1 * z2
         "/" -> result = z1 / z2
+        "<" -> result = z1 < z2
+        ">" -> result = z1 > z2
 
         else -> {
             println("Error! operator is not correct")
@@ -37,8 +39,8 @@ fun main() {
 }
 
 
-/*
 
+ /*
 import java.util.*
 
 fun main() {
@@ -55,7 +57,7 @@ fun calculator() {
 
     println("Enter an operator (+,-,*,/).")
     val op = scanner.next()
-    val result: Double
+    val result: Any
 
     when (op) {
 
@@ -63,6 +65,8 @@ fun calculator() {
         "-" -> result = z1 - z2
         "*" -> result = z1 * z2
         "/" -> result = z1 / z2
+        "<" -> result = z1 < z2
+        ">" -> result = z1 > z2
 
         else -> {
             println("Error! operator is not correct")
@@ -74,4 +78,6 @@ fun calculator() {
 
 }
 
- */
+*/
+
+
